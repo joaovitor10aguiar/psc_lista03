@@ -1,0 +1,37 @@
+/* Ex 06 - Crie um algoritmo que leia dois números inteiros e realize o sorteio de um número aleatório. O algoritmo deve validar
+qual é o menor e o maior número informado pelo teclado, para que independente da ordem que o usuário digite os números,
+consiga realizar o sorteio. Se o algoritmo gerar um número par, escreva na tela o número gerado e informe que ele é par.
+Se o algoritmo gerar um número ímpar, escreva na tela o número gerado e que ele é um número ímpar.
+*/
+
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Sorteio {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite o primeiro número inteiro:");
+        int numero1 = scanner.nextInt();
+
+        System.out.println("Digite o segundo número inteiro:");
+        int numero2 = scanner.nextInt();
+
+        int menor = Math.min(numero1, numero2);
+        int maior = Math.max(numero1, numero2);
+        
+        Random random = new Random();
+        int numeroAleatorio = random.nextInt((maior - menor) + 1) + menor;
+
+        // Verificando se o número aleatório gerado é par ou ímpar
+        String tipoNumero = (numeroAleatorio % 2 == 0) ? "par" : "ímpar";
+
+        // Exibindo o número aleatório gerado e o tipo (par ou ímpar)
+        System.out.println("O número aleatório gerado é: " + numeroAleatorio);
+        System.out.println("É um número " + tipoNumero + ".");
+
+        scanner.close();
+    }
+}
+
