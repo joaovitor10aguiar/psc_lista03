@@ -1,0 +1,52 @@
+/* 4. Escreva um algoritmo que leia dois valores: o primeiro servindo de indicador de operação e o segundo correspondendo ao raio de um círculo ou esfera. Caso o primeiro valor lido seja:
+a. 1: calcular e imprimir o perímetro do círculo.
+b. 2: calcular e imprimir a área do círculo.
+c. 3: calcular e imprimir o volume da esfera.
+Se o primeiro valor lido for diferente desses três valores possíveis, imprimir uma mensagem de erro, informando que o código da operação é inválido.
+*/ 
+
+import java.util.Scanner;
+
+public class OperacoesCirculo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Entrada dos valores
+        System.out.println("Digite o indicador de operação (1 para perímetro do círculo, 2 para área do círculo, 3 para volume da esfera):");
+        int operacao = scanner.nextInt();
+
+        System.out.println("Digite o raio do círculo ou da esfera:");
+        double raio = scanner.nextDouble();
+
+        // Constante pi
+        double pi = 3.141592;
+
+        // Realizando a operação conforme o indicador
+        switch (operacao) {
+            case 1:
+                // Calculando o perímetro do círculo
+                double perimetro = 2 * pi * raio;
+                System.out.println("O perímetro do círculo é: " + perimetro);
+                break;
+            case 2:
+                // Calculando a área do círculo
+                double area = pi * raio * raio;
+                System.out.println("A área do círculo é: " + area);
+                break;
+            case 3:
+                // Calculando o volume da esfera
+                double volume = (4.0/3.0) * pi * Math.pow(raio, 3);
+                System.out.println("O volume da esfera é: " + volume);
+                break;
+            default:
+                // Mensagem de erro para indicador de operação inválido
+                System.out.println("Código de operação inválido.");
+        }
+
+        scanner.close();
+    }
+}
+
+
+
+
