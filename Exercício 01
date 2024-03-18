@@ -1,0 +1,54 @@
+/* Ex 01 - Escreva um algoritmo que leia 3 números a partir do teclado. O algoritmo deve apresentar:
+a. O maior número.
+b. O menor número.
+c. A média aritmética dos três números.
+*/ 
+
+
+import java.util.Scanner;
+
+public class Algoritmo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double numeroUm;
+        double numeroDois;
+        double numeroTres;
+
+        System.out.println("Digite o primeiro número:");
+        numeroUm = scanner.nextDouble();
+
+        System.out.println("Digite o segundo número:");
+        numeroDois = scanner.nextDouble();
+
+        System.out.println("Digite o terceiro número:");
+        numeroTres = scanner.nextDouble();
+
+        // Maior número:
+        double maior = numeroUm;
+        if (numeroDois > maior) {
+            maior = numeroDois;
+        }
+        if (numeroTres > maior) {
+            maior = numeroTres;
+        }
+
+        // Menor número
+        double menor = numeroUm;
+        if (numeroDois < menor) {
+            menor = numeroDois;
+        }
+        if (numeroTres < menor) {
+            menor = numeroTres;
+        }
+
+        // Média aritmética
+        double media = (numeroUm + numeroDois + numeroTres) / 3;
+
+        System.out.println("O maior número é: " + maior);
+        System.out.println("O menor número é: " + menor);
+        System.out.println("A média aritmética dos números é: " + media);
+
+        scanner.close();
+    }
+}
